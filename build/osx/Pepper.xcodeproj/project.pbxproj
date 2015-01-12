@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A3FF93401A6491DB00AB9427 /* Before.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933B1A6491DB00AB9427 /* Before.cpp */; };
+		A3FF93411A6491DB00AB9427 /* Feature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933C1A6491DB00AB9427 /* Feature.cpp */; };
+		A3FF93421A6491DB00AB9427 /* Pepper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933D1A6491DB00AB9427 /* Pepper.cpp */; };
+		A3FF93431A6491DB00AB9427 /* Step.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933E1A6491DB00AB9427 /* Step.cpp */; };
+		A3FF93441A6491DB00AB9427 /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933F1A6491DB00AB9427 /* World.cpp */; };
+		A3FF93901A64935200AB9427 /* Before.h in Headers */ = {isa = PBXBuildFile; fileRef = A3FF93361A6491BE00AB9427 /* Before.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3FF93911A64935200AB9427 /* Feature.h in Headers */ = {isa = PBXBuildFile; fileRef = A3FF93371A6491BE00AB9427 /* Feature.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3FF93921A64935200AB9427 /* Pepper.h in Headers */ = {isa = PBXBuildFile; fileRef = A3FF93381A6491BE00AB9427 /* Pepper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3FF93931A64935200AB9427 /* Step.h in Headers */ = {isa = PBXBuildFile; fileRef = A3FF93391A6491BE00AB9427 /* Step.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3FF93941A64935200AB9427 /* World.h in Headers */ = {isa = PBXBuildFile; fileRef = A3FF933A1A6491BE00AB9427 /* World.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A3FF937E1A64927E00AB9427 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3FF93681A64927E00AB9427 /* Gherkin-Cpp.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A3FF92EB1A63FB7B00AB9427;
+			remoteInfo = "Gherkin-Cpp";
+		};
+		A3FF938E1A64933000AB9427 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3FF93681A64927E00AB9427 /* Gherkin-Cpp.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A3FF92EA1A63FB7B00AB9427;
+			remoteInfo = "Gherkin-Cpp";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A3FF931E1A648E5F00AB9427 /* libPepper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPepper.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3FF93321A648F2500AB9427 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
+		A3FF93361A6491BE00AB9427 /* Before.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Before.h; sourceTree = "<group>"; };
+		A3FF93371A6491BE00AB9427 /* Feature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature.h; sourceTree = "<group>"; };
+		A3FF93381A6491BE00AB9427 /* Pepper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pepper.h; sourceTree = "<group>"; };
+		A3FF93391A6491BE00AB9427 /* Step.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
+		A3FF933A1A6491BE00AB9427 /* World.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
+		A3FF933B1A6491DB00AB9427 /* Before.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Before.cpp; sourceTree = "<group>"; };
+		A3FF933C1A6491DB00AB9427 /* Feature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Feature.cpp; sourceTree = "<group>"; };
+		A3FF933D1A6491DB00AB9427 /* Pepper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pepper.cpp; sourceTree = "<group>"; };
+		A3FF933E1A6491DB00AB9427 /* Step.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Step.cpp; sourceTree = "<group>"; };
+		A3FF933F1A6491DB00AB9427 /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = World.cpp; sourceTree = "<group>"; };
+		A3FF93651A64927E00AB9427 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A3FF93681A64927E00AB9427 /* Gherkin-Cpp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Gherkin-Cpp.xcodeproj"; sourceTree = "<group>"; };
+		A3FF936D1A64927E00AB9427 /* AbstractParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbstractParser.h; sourceTree = "<group>"; };
+		A3FF936E1A64927E00AB9427 /* Feature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature.h; sourceTree = "<group>"; };
+		A3FF936F1A64927E00AB9427 /* FeatureParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureParser.h; sourceTree = "<group>"; };
+		A3FF93701A64927E00AB9427 /* GherkinParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GherkinParser.h; sourceTree = "<group>"; };
+		A3FF93711A64927E00AB9427 /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		A3FF93721A64927E00AB9427 /* NodeFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeFactory.h; sourceTree = "<group>"; };
+		A3FF93731A64927E00AB9427 /* NodeVisitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeVisitor.h; sourceTree = "<group>"; };
+		A3FF93741A64927E00AB9427 /* ParserNodeException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParserNodeException.h; sourceTree = "<group>"; };
+		A3FF93751A64927E00AB9427 /* Printer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Printer.h; sourceTree = "<group>"; };
+		A3FF93761A64927E00AB9427 /* Scenario.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scenario.h; sourceTree = "<group>"; };
+		A3FF93771A64927E00AB9427 /* ScenarioParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScenarioParser.h; sourceTree = "<group>"; };
+		A3FF93781A64927E00AB9427 /* Step.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
+		A3FF93791A64927E00AB9427 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A3FF937A1A64927E00AB9427 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A3FF937C1A64927E00AB9427 /* Node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A3FF931B1A648E5F00AB9427 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A3FF93151A648E5F00AB9427 = {
+			isa = PBXGroup;
+			children = (
+				A3FF93321A648F2500AB9427 /* README.md */,
+				A3FF93331A648F2A00AB9427 /* include */,
+				A3FF93351A648FAE00AB9427 /* src */,
+				A3FF93631A64927E00AB9427 /* deps */,
+				A3FF931F1A648E5F00AB9427 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A3FF931F1A648E5F00AB9427 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF931E1A648E5F00AB9427 /* libPepper.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3FF93331A648F2A00AB9427 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF93341A648F3B00AB9427 /* Pepper */,
+			);
+			name = include;
+			path = ../../include;
+			sourceTree = "<group>";
+		};
+		A3FF93341A648F3B00AB9427 /* Pepper */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF93361A6491BE00AB9427 /* Before.h */,
+				A3FF93371A6491BE00AB9427 /* Feature.h */,
+				A3FF93381A6491BE00AB9427 /* Pepper.h */,
+				A3FF93391A6491BE00AB9427 /* Step.h */,
+				A3FF933A1A6491BE00AB9427 /* World.h */,
+			);
+			path = Pepper;
+			sourceTree = "<group>";
+		};
+		A3FF93351A648FAE00AB9427 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF933B1A6491DB00AB9427 /* Before.cpp */,
+				A3FF933C1A6491DB00AB9427 /* Feature.cpp */,
+				A3FF933D1A6491DB00AB9427 /* Pepper.cpp */,
+				A3FF933E1A6491DB00AB9427 /* Step.cpp */,
+				A3FF933F1A6491DB00AB9427 /* World.cpp */,
+			);
+			name = src;
+			path = ../../src;
+			sourceTree = "<group>";
+		};
+		A3FF93631A64927E00AB9427 /* deps */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF93641A64927E00AB9427 /* Gherkin-Cpp */,
+			);
+			name = deps;
+			path = ../../deps;
+			sourceTree = "<group>";
+		};
+		A3FF93641A64927E00AB9427 /* Gherkin-Cpp */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF93651A64927E00AB9427 /* .gitignore */,
+				A3FF93661A64927E00AB9427 /* build */,
+				A3FF936B1A64927E00AB9427 /* include */,
+				A3FF93791A64927E00AB9427 /* LICENSE */,
+				A3FF937A1A64927E00AB9427 /* README.md */,
+				A3FF937B1A64927E00AB9427 /* src */,
+			);
+			path = "Gherkin-Cpp";
+			sourceTree = "<group>";
+		};
+		A3FF93661A64927E00AB9427 /* build */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF93671A64927E00AB9427 /* osx */,
+			);
+			path = build;
+			sourceTree = "<group>";
+		};
+		A3FF93671A64927E00AB9427 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF93681A64927E00AB9427 /* Gherkin-Cpp.xcodeproj */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		A3FF93691A64927E00AB9427 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF937F1A64927E00AB9427 /* libGherkin-Cpp.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3FF936B1A64927E00AB9427 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF936C1A64927E00AB9427 /* Gherkin */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A3FF936C1A64927E00AB9427 /* Gherkin */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF936D1A64927E00AB9427 /* AbstractParser.h */,
+				A3FF936E1A64927E00AB9427 /* Feature.h */,
+				A3FF936F1A64927E00AB9427 /* FeatureParser.h */,
+				A3FF93701A64927E00AB9427 /* GherkinParser.h */,
+				A3FF93711A64927E00AB9427 /* Node.h */,
+				A3FF93721A64927E00AB9427 /* NodeFactory.h */,
+				A3FF93731A64927E00AB9427 /* NodeVisitor.h */,
+				A3FF93741A64927E00AB9427 /* ParserNodeException.h */,
+				A3FF93751A64927E00AB9427 /* Printer.h */,
+				A3FF93761A64927E00AB9427 /* Scenario.h */,
+				A3FF93771A64927E00AB9427 /* ScenarioParser.h */,
+				A3FF93781A64927E00AB9427 /* Step.h */,
+			);
+			path = Gherkin;
+			sourceTree = "<group>";
+		};
+		A3FF937B1A64927E00AB9427 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF937C1A64927E00AB9427 /* Node.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A3FF931C1A648E5F00AB9427 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3FF93901A64935200AB9427 /* Before.h in Headers */,
+				A3FF93911A64935200AB9427 /* Feature.h in Headers */,
+				A3FF93921A64935200AB9427 /* Pepper.h in Headers */,
+				A3FF93931A64935200AB9427 /* Step.h in Headers */,
+				A3FF93941A64935200AB9427 /* World.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A3FF931D1A648E5F00AB9427 /* Pepper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3FF93291A648E5F00AB9427 /* Build configuration list for PBXNativeTarget "Pepper" */;
+			buildPhases = (
+				A3FF931A1A648E5F00AB9427 /* Sources */,
+				A3FF931B1A648E5F00AB9427 /* Frameworks */,
+				A3FF931C1A648E5F00AB9427 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A3FF938F1A64933000AB9427 /* PBXTargetDependency */,
+			);
+			name = Pepper;
+			productName = Pepper;
+			productReference = A3FF931E1A648E5F00AB9427 /* libPepper.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A3FF93161A648E5F00AB9427 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Replicated Solutions Limited";
+				TargetAttributes = {
+					A3FF931D1A648E5F00AB9427 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = A3FF93191A648E5F00AB9427 /* Build configuration list for PBXProject "Pepper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A3FF93151A648E5F00AB9427;
+			productRefGroup = A3FF931F1A648E5F00AB9427 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A3FF93691A64927E00AB9427 /* Products */;
+					ProjectRef = A3FF93681A64927E00AB9427 /* Gherkin-Cpp.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				A3FF931D1A648E5F00AB9427 /* Pepper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A3FF937F1A64927E00AB9427 /* libGherkin-Cpp.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libGherkin-Cpp.a";
+			remoteRef = A3FF937E1A64927E00AB9427 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A3FF931A1A648E5F00AB9427 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3FF93411A6491DB00AB9427 /* Feature.cpp in Sources */,
+				A3FF93441A6491DB00AB9427 /* World.cpp in Sources */,
+				A3FF93431A6491DB00AB9427 /* Step.cpp in Sources */,
+				A3FF93401A6491DB00AB9427 /* Before.cpp in Sources */,
+				A3FF93421A6491DB00AB9427 /* Pepper.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A3FF938F1A64933000AB9427 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Gherkin-Cpp";
+			targetProxy = A3FF938E1A64933000AB9427 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A3FF93271A648E5F00AB9427 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A3FF93281A648E5F00AB9427 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A3FF932A1A648E5F00AB9427 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A3FF932B1A648E5F00AB9427 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A3FF93191A648E5F00AB9427 /* Build configuration list for PBXProject "Pepper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3FF93271A648E5F00AB9427 /* Debug */,
+				A3FF93281A648E5F00AB9427 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3FF93291A648E5F00AB9427 /* Build configuration list for PBXNativeTarget "Pepper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3FF932A1A648E5F00AB9427 /* Debug */,
+				A3FF932B1A648E5F00AB9427 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A3FF93161A648E5F00AB9427 /* Project object */;
+}
