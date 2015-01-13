@@ -1,6 +1,0 @@
-[submodule "deps/Gherkin-Cpp"]
-	path = deps/Gherkin-Cpp
-	url = https://github.com/dmeehan1968/Gherkin-Cpp.git
-[submodule "deps/ZingCpp"]
-	path = deps/ZingCpp
-	url = https://github.com/dmeehan1968/ZingCpp.git
