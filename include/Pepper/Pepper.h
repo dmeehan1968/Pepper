@@ -17,6 +17,19 @@
 
 #include "Feature.h"
 
+#include <Gherkin/NodeVisitor.h>
+#include <Gherkin/Node.h>
+#include <Gherkin/Feature.h>
+#include <Gherkin/Scenario.h>
+#include <Gherkin/Step.h>
+#include <Gherkin/Printer.h>
+#include <Gherkin/NodeFactory.h>
+#include <Gherkin/ParserNodeException.h>
+#include <Gherkin/AbstractParser.h>
+#include <Gherkin/ScenarioParser.h>
+#include <Gherkin/FeatureParser.h>
+#include <Gherkin/GherkinParser.h>
+
 namespace Zing { namespace Pepper {
 
     namespace StepDefinitions {
@@ -37,39 +50,24 @@ namespace Zing { namespace Pepper {
         template <typename InputIterator>
         void parse(InputIterator begin, InputIterator const end) {
 
-            std::unique_ptr<StepDefinitions::Feature> feature;
+            try {
 
-            std::for_each(begin, end, [&](decltype(*begin) const &string) {
+                using namespace Gherkin;
 
-                std::regex expr("^\\s*(feature:|scenario:|given|when|then|and)\\s*(.*)\\s*$", std::regex::icase | std::regex::ECMAScript);
-                std::smatch matches;
+                auto root = std::make_shared<Node>();
 
-                if (std::regex_match(string, matches, expr)) {
+                GherkinParser<decltype(begin)>(begin, end, root).parse();
 
-                    auto keyword = matches[1].str();
-                    std::transform(keyword.begin(), keyword.end(), keyword.begin(), ::tolower);
+                Printer printer;
+                root->accept(printer);
 
-                    if (keyword == "feature:") {
+            } catch (std::exception &e) {
+                
+                std::cout << "Exception: " << e.what() << std::endl;
+                
+            }
+            
 
-                        feature = std::unique_ptr<StepDefinitions::Feature>(new StepDefinitions::Feature());
-
-                    }
-
-                    std::cout << matches.str() << std::endl;
-
-                    invokeBeforesThatMatch(*feature, matches[2]);
-
-                    std::list<std::string> stepKeywords = { "given", "when", "then", "and", "but" };
-
-                    if (std::find(stepKeywords.begin(), stepKeywords.end(), keyword) != stepKeywords.end()) {
-
-                        invokeStepsThatMatch(*feature, matches[2]);
-
-                    }
-
-                }
-
-            });
         }
 
     protected:

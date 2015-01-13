@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A304F37E1A6586380092DB7A /* libGherkin-Cpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FF937F1A64927E00AB9427 /* libGherkin-Cpp.a */; };
+		A304F37F1A6586380092DB7A /* libZingCpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FF93CD1A650E1400AB9427 /* libZingCpp.a */; };
 		A3FF93401A6491DB00AB9427 /* Before.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933B1A6491DB00AB9427 /* Before.cpp */; };
 		A3FF93411A6491DB00AB9427 /* Feature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933C1A6491DB00AB9427 /* Feature.cpp */; };
 		A3FF93421A6491DB00AB9427 /* Pepper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933D1A6491DB00AB9427 /* Pepper.cpp */; };
@@ -93,6 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A304F37E1A6586380092DB7A /* libGherkin-Cpp.a in Frameworks */,
+				A304F37F1A6586380092DB7A /* libZingCpp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +459,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"../../deps/Gherkin-Cpp/include/",
 					../../deps/ZingCpp/include/,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -496,7 +499,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"../../deps/Gherkin-Cpp/include/",
 					../../deps/ZingCpp/include/,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
