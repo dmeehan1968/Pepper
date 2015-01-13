@@ -9,7 +9,8 @@
 #ifndef __DelegateTest__Before__
 #define __DelegateTest__Before__
 
-#include "../../App/Args.h"
+#include <ZingCpp/Args.h>
+
 #include "Feature.h"
 
 #include <string>

@@ -9,7 +9,8 @@
 #ifndef __DelegateTest__Step__
 #define __DelegateTest__Step__
 
-#include "../../App/Args.h"
+#include <ZingCpp/Args.h>
+
 #include "Step.h"
 #include "World.h"
 

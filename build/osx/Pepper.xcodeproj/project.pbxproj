@@ -34,6 +34,20 @@
 			remoteGlobalIDString = A3FF92EA1A63FB7B00AB9427;
 			remoteInfo = "Gherkin-Cpp";
 		};
+		A3FF93CC1A650E1400AB9427 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3FF93C11A650E1400AB9427 /* ZingCpp.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A3FF939E1A650C6500AB9427;
+			remoteInfo = ZingCpp;
+		};
+		A3FF93CE1A650E2000AB9427 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3FF93C11A650E1400AB9427 /* ZingCpp.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A3FF939D1A650C6500AB9427;
+			remoteInfo = ZingCpp;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +80,12 @@
 		A3FF93791A64927E00AB9427 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A3FF937A1A64927E00AB9427 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A3FF937C1A64927E00AB9427 /* Node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		A3FF93BE1A650E1400AB9427 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A3FF93C11A650E1400AB9427 /* ZingCpp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ZingCpp.xcodeproj; sourceTree = "<group>"; };
+		A3FF93C61A650E1400AB9427 /* Args.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Args.h; sourceTree = "<group>"; };
+		A3FF93C71A650E1400AB9427 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A3FF93C81A650E1400AB9427 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A3FF93CA1A650E1400AB9427 /* Args.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Args.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +155,7 @@
 		A3FF93631A64927E00AB9427 /* deps */ = {
 			isa = PBXGroup;
 			children = (
+				A3FF93BD1A650E1400AB9427 /* ZingCpp */,
 				A3FF93641A64927E00AB9427 /* Gherkin-Cpp */,
 			);
 			name = deps;
@@ -213,6 +234,67 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		A3FF93BD1A650E1400AB9427 /* ZingCpp */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF93BE1A650E1400AB9427 /* .gitignore */,
+				A3FF93BF1A650E1400AB9427 /* build */,
+				A3FF93C41A650E1400AB9427 /* include */,
+				A3FF93C71A650E1400AB9427 /* LICENSE */,
+				A3FF93C81A650E1400AB9427 /* README.md */,
+				A3FF93C91A650E1400AB9427 /* src */,
+			);
+			path = ZingCpp;
+			sourceTree = "<group>";
+		};
+		A3FF93BF1A650E1400AB9427 /* build */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF93C01A650E1400AB9427 /* osx */,
+			);
+			path = build;
+			sourceTree = "<group>";
+		};
+		A3FF93C01A650E1400AB9427 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF93C11A650E1400AB9427 /* ZingCpp.xcodeproj */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		A3FF93C21A650E1400AB9427 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF93CD1A650E1400AB9427 /* libZingCpp.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3FF93C41A650E1400AB9427 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF93C51A650E1400AB9427 /* ZingCpp */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A3FF93C51A650E1400AB9427 /* ZingCpp */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF93C61A650E1400AB9427 /* Args.h */,
+			);
+			path = ZingCpp;
+			sourceTree = "<group>";
+		};
+		A3FF93C91A650E1400AB9427 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A3FF93CA1A650E1400AB9427 /* Args.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -242,6 +324,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A3FF93CF1A650E2000AB9427 /* PBXTargetDependency */,
 				A3FF938F1A64933000AB9427 /* PBXTargetDependency */,
 			);
 			name = Pepper;
@@ -278,6 +361,10 @@
 					ProductGroup = A3FF93691A64927E00AB9427 /* Products */;
 					ProjectRef = A3FF93681A64927E00AB9427 /* Gherkin-Cpp.xcodeproj */;
 				},
+				{
+					ProductGroup = A3FF93C21A650E1400AB9427 /* Products */;
+					ProjectRef = A3FF93C11A650E1400AB9427 /* ZingCpp.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -292,6 +379,13 @@
 			fileType = archive.ar;
 			path = "libGherkin-Cpp.a";
 			remoteRef = A3FF937E1A64927E00AB9427 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A3FF93CD1A650E1400AB9427 /* libZingCpp.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libZingCpp.a;
+			remoteRef = A3FF93CC1A650E1400AB9427 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -316,6 +410,11 @@
 			isa = PBXTargetDependency;
 			name = "Gherkin-Cpp";
 			targetProxy = A3FF938E1A64933000AB9427 /* PBXContainerItemProxy */;
+		};
+		A3FF93CF1A650E2000AB9427 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZingCpp;
+			targetProxy = A3FF93CE1A650E2000AB9427 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -353,6 +452,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../deps/Gherkin-Cpp/include/",
+					../../deps/ZingCpp/include/,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -388,6 +493,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../deps/Gherkin-Cpp/include/",
+					../../deps/ZingCpp/include/,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
