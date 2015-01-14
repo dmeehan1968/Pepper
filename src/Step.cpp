@@ -16,13 +16,13 @@ namespace Zing { namespace Pepper { namespace StepDefinitions {
         _expr(expr, flags)
     { }
 
-    std::unique_ptr<App::Args> Step::accepts(std::string const &string) const {
+    std::unique_ptr<Args> Step::accepts(std::string const &string) const {
 
         std::smatch matches;
 
         if (std::regex_match(string, matches, _expr)) {
 
-            auto args = std::unique_ptr<App::Args>(new App::Args());
+            auto args = std::unique_ptr<Args>(new Args());
 
             if (matches.size() > 1) {
 

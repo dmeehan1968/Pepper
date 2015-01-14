@@ -18,13 +18,13 @@ namespace Zing { namespace Pepper { namespace StepDefinitions {
 
     Before::~Before() {}
 
-    std::unique_ptr<App::Args> Before::accepts(std::string const &string) {
+    std::unique_ptr<Args> Before::accepts(std::string const &string) {
 
         std::smatch matches;
 
         if (std::regex_match(string, matches, _expr)) {
 
-            auto args = std::unique_ptr<App::Args>(new App::Args());
+            auto args = std::unique_ptr<Args>(new Args());
 
             if (matches.size() > 1) {
 

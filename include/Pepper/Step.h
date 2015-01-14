@@ -26,9 +26,9 @@ namespace Zing { namespace Pepper { namespace StepDefinitions {
         Step(std::string const &expr,
              std::regex::flag_type flags = std::regex::ECMAScript);
 
-        std::unique_ptr<Zing::App::Args> accepts(std::string const &string) const;
+        std::unique_ptr<Zing::Args> accepts(std::string const &string) const;
 
-        virtual void operator()(Zing::App::Args &args) = 0;
+        virtual void operator()(Zing::Args &args) = 0;
 
         template <typename T>
         std::shared_ptr<T> world() const {

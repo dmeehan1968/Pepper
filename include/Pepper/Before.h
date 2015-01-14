@@ -28,9 +28,9 @@ namespace Zing { namespace Pepper { namespace StepDefinitions {
 
         virtual ~Before();
 
-        std::unique_ptr<Zing::App::Args> accepts(std::string const &string);
+        std::unique_ptr<Zing::Args> accepts(std::string const &string);
         
-        virtual void operator()(Feature &feature, Zing::App::Args &args) = 0;
+        virtual void operator()(Feature &feature, Zing::Args &args) = 0;
         
     private:
         
