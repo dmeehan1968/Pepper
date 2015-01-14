@@ -9,15 +9,17 @@
 #ifndef __DelegateTest__Before__
 #define __DelegateTest__Before__
 
-#include <ZingCpp/Args.h>
-
-#include "Feature.h"
-
 #include <string>
 #include <memory>
 #include <regex>
 
+namespace Zing {
+    class Args;
+}
+
 namespace Pepper {
+
+    class Feature;
 
     class Before {
 
