@@ -15,32 +15,33 @@
 
 namespace Pepper {
 
+    class Step;
+    class Before;
+
     class Pepper {
 
     public:
 
         template <typename InputIterator>
-        void parse(InputIterator begin, InputIterator const end) {
+        std::shared_ptr<Gherkin::Node> parse(InputIterator begin, InputIterator const end) {
 
             try {
 
-                using namespace Gherkin;
+                auto location = std::make_shared<Gherkin::Location>("test.feature");
+                auto root = std::make_shared<Gherkin::Node>(*location);
 
-                auto location = std::make_shared<Location>("test.feature");
-                auto root = std::make_shared<Node>(*location);
+                Gherkin::GherkinParser<decltype(begin)>(begin, end, location, root).parse();
 
-                GherkinParser<decltype(begin)>(begin, end, location, root).parse();
-
-                Printer printer;
-                root->accept(printer);
+                return root;
 
             } catch (std::exception &e) {
                 
                 std::cout << "Exception: " << e.what() << std::endl;
                 
             }
-            
 
+            return {};
+            
         }
 
     };

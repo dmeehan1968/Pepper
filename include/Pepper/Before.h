@@ -30,7 +30,7 @@ namespace Pepper {
 
         virtual ~Before();
 
-        std::unique_ptr<Zing::Args> accepts(std::string const &string);
+        std::unique_ptr<Zing::Args> accept(std::string const &string);
         
         virtual void operator()(Feature &feature, Zing::Args &args) = 0;
         

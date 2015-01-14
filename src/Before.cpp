@@ -18,7 +18,7 @@ namespace Pepper {
 
     Before::~Before() {}
 
-    std::unique_ptr<Zing::Args> Before::accepts(std::string const &string) {
+    std::unique_ptr<Zing::Args> Before::accept(std::string const &string) {
 
         std::smatch matches;
 
