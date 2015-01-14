@@ -9,11 +9,7 @@
 #ifndef __DelegateTest__Pepper__
 #define __DelegateTest__Pepper__
 
-#include <memory>
-#include <algorithm>
-#include <regex>
 #include <iostream>
-#include <list>
 
 #include <Gherkin-Cpp/GherkinParser.h>
 #include <Gherkin-Cpp/Printer.h>
