@@ -9,10 +9,9 @@
 #ifndef __DelegateTest__Pepper__
 #define __DelegateTest__Pepper__
 
-#include <iostream>
+#include "Printer.h"
 
 #include <Gherkin-Cpp/GherkinParser.h>
-#include <Gherkin-Cpp/Printer.h>
 
 namespace Pepper {
 
