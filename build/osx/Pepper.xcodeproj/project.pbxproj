@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A304F37E1A6586380092DB7A /* libGherkin-Cpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FF937F1A64927E00AB9427 /* libGherkin-Cpp.a */; };
-		A304F37F1A6586380092DB7A /* libZingCpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3FF93CD1A650E1400AB9427 /* libZingCpp.a */; };
 		A3FF93401A6491DB00AB9427 /* Before.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933B1A6491DB00AB9427 /* Before.cpp */; };
 		A3FF93411A6491DB00AB9427 /* Feature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933C1A6491DB00AB9427 /* Feature.cpp */; };
 		A3FF93421A6491DB00AB9427 /* Pepper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933D1A6491DB00AB9427 /* Pepper.cpp */; };
@@ -22,37 +20,39 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A3FF937E1A64927E00AB9427 /* PBXContainerItemProxy */ = {
+		A304F45F1A66A9AB0092DB7A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A3FF93681A64927E00AB9427 /* Gherkin-Cpp.xcodeproj */;
+			containerPortal = A304F45B1A66A9AB0092DB7A /* Gherkin-Cpp.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A3FF92EB1A63FB7B00AB9427;
 			remoteInfo = "Gherkin-Cpp";
 		};
-		A3FF938E1A64933000AB9427 /* PBXContainerItemProxy */ = {
+		A304F4651A66A9B90092DB7A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A3FF93681A64927E00AB9427 /* Gherkin-Cpp.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A3FF92EA1A63FB7B00AB9427;
-			remoteInfo = "Gherkin-Cpp";
-		};
-		A3FF93CC1A650E1400AB9427 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A3FF93C11A650E1400AB9427 /* ZingCpp.xcodeproj */;
+			containerPortal = A304F4611A66A9B90092DB7A /* ZingCpp.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A3FF939E1A650C6500AB9427;
 			remoteInfo = ZingCpp;
 		};
-		A3FF93CE1A650E2000AB9427 /* PBXContainerItemProxy */ = {
+		A304F46D1A66AAEA0092DB7A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A3FF93C11A650E1400AB9427 /* ZingCpp.xcodeproj */;
+			containerPortal = A304F4611A66A9B90092DB7A /* ZingCpp.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = A3FF939D1A650C6500AB9427;
 			remoteInfo = ZingCpp;
 		};
+		A304F4711A66AAF10092DB7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A304F45B1A66A9AB0092DB7A /* Gherkin-Cpp.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A3FF92EA1A63FB7B00AB9427;
+			remoteInfo = "Gherkin-Cpp";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A304F45B1A66A9AB0092DB7A /* Gherkin-Cpp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Gherkin-Cpp.xcodeproj"; path = "../../dependencies/Gherkin-Cpp/build/osx/Gherkin-Cpp.xcodeproj"; sourceTree = "<group>"; };
+		A304F4611A66A9B90092DB7A /* ZingCpp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZingCpp.xcodeproj; path = ../../dependencies/ZingCpp/build/osx/ZingCpp.xcodeproj; sourceTree = "<group>"; };
 		A3FF931E1A648E5F00AB9427 /* libPepper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPepper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FF93321A648F2500AB9427 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		A3FF93361A6491BE00AB9427 /* Before.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Before.h; sourceTree = "<group>"; };
@@ -65,29 +65,6 @@
 		A3FF933D1A6491DB00AB9427 /* Pepper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pepper.cpp; sourceTree = "<group>"; };
 		A3FF933E1A6491DB00AB9427 /* Step.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Step.cpp; sourceTree = "<group>"; };
 		A3FF933F1A6491DB00AB9427 /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = World.cpp; sourceTree = "<group>"; };
-		A3FF93651A64927E00AB9427 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		A3FF93681A64927E00AB9427 /* Gherkin-Cpp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Gherkin-Cpp.xcodeproj"; sourceTree = "<group>"; };
-		A3FF936D1A64927E00AB9427 /* AbstractParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbstractParser.h; sourceTree = "<group>"; };
-		A3FF936E1A64927E00AB9427 /* Feature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature.h; sourceTree = "<group>"; };
-		A3FF936F1A64927E00AB9427 /* FeatureParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureParser.h; sourceTree = "<group>"; };
-		A3FF93701A64927E00AB9427 /* GherkinParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GherkinParser.h; sourceTree = "<group>"; };
-		A3FF93711A64927E00AB9427 /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
-		A3FF93721A64927E00AB9427 /* NodeFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeFactory.h; sourceTree = "<group>"; };
-		A3FF93731A64927E00AB9427 /* NodeVisitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeVisitor.h; sourceTree = "<group>"; };
-		A3FF93741A64927E00AB9427 /* ParserNodeException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParserNodeException.h; sourceTree = "<group>"; };
-		A3FF93751A64927E00AB9427 /* Printer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Printer.h; sourceTree = "<group>"; };
-		A3FF93761A64927E00AB9427 /* Scenario.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scenario.h; sourceTree = "<group>"; };
-		A3FF93771A64927E00AB9427 /* ScenarioParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScenarioParser.h; sourceTree = "<group>"; };
-		A3FF93781A64927E00AB9427 /* Step.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
-		A3FF93791A64927E00AB9427 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		A3FF937A1A64927E00AB9427 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A3FF937C1A64927E00AB9427 /* Node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
-		A3FF93BE1A650E1400AB9427 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		A3FF93C11A650E1400AB9427 /* ZingCpp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ZingCpp.xcodeproj; sourceTree = "<group>"; };
-		A3FF93C61A650E1400AB9427 /* Args.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Args.h; sourceTree = "<group>"; };
-		A3FF93C71A650E1400AB9427 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		A3FF93C81A650E1400AB9427 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A3FF93CA1A650E1400AB9427 /* Args.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Args.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,21 +72,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A304F37E1A6586380092DB7A /* libGherkin-Cpp.a in Frameworks */,
-				A304F37F1A6586380092DB7A /* libZingCpp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A304F45C1A66A9AB0092DB7A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A304F4601A66A9AB0092DB7A /* libGherkin-Cpp.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A304F4621A66A9B90092DB7A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A304F4661A66A9B90092DB7A /* libZingCpp.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A3FF93151A648E5F00AB9427 = {
 			isa = PBXGroup;
 			children = (
+				A304F4611A66A9B90092DB7A /* ZingCpp.xcodeproj */,
+				A304F45B1A66A9AB0092DB7A /* Gherkin-Cpp.xcodeproj */,
 				A3FF93321A648F2500AB9427 /* README.md */,
 				A3FF93331A648F2A00AB9427 /* include */,
 				A3FF93351A648FAE00AB9427 /* src */,
-				A3FF93631A64927E00AB9427 /* deps */,
 				A3FF931F1A648E5F00AB9427 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -156,149 +148,6 @@
 			path = ../../src;
 			sourceTree = "<group>";
 		};
-		A3FF93631A64927E00AB9427 /* deps */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF93BD1A650E1400AB9427 /* ZingCpp */,
-				A3FF93641A64927E00AB9427 /* Gherkin-Cpp */,
-			);
-			name = deps;
-			path = ../../deps;
-			sourceTree = "<group>";
-		};
-		A3FF93641A64927E00AB9427 /* Gherkin-Cpp */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF93651A64927E00AB9427 /* .gitignore */,
-				A3FF93661A64927E00AB9427 /* build */,
-				A3FF936B1A64927E00AB9427 /* include */,
-				A3FF93791A64927E00AB9427 /* LICENSE */,
-				A3FF937A1A64927E00AB9427 /* README.md */,
-				A3FF937B1A64927E00AB9427 /* src */,
-			);
-			path = "Gherkin-Cpp";
-			sourceTree = "<group>";
-		};
-		A3FF93661A64927E00AB9427 /* build */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF93671A64927E00AB9427 /* osx */,
-			);
-			path = build;
-			sourceTree = "<group>";
-		};
-		A3FF93671A64927E00AB9427 /* osx */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF93681A64927E00AB9427 /* Gherkin-Cpp.xcodeproj */,
-			);
-			path = osx;
-			sourceTree = "<group>";
-		};
-		A3FF93691A64927E00AB9427 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF937F1A64927E00AB9427 /* libGherkin-Cpp.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A3FF936B1A64927E00AB9427 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF936C1A64927E00AB9427 /* Gherkin */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		A3FF936C1A64927E00AB9427 /* Gherkin */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF936D1A64927E00AB9427 /* AbstractParser.h */,
-				A3FF936E1A64927E00AB9427 /* Feature.h */,
-				A3FF936F1A64927E00AB9427 /* FeatureParser.h */,
-				A3FF93701A64927E00AB9427 /* GherkinParser.h */,
-				A3FF93711A64927E00AB9427 /* Node.h */,
-				A3FF93721A64927E00AB9427 /* NodeFactory.h */,
-				A3FF93731A64927E00AB9427 /* NodeVisitor.h */,
-				A3FF93741A64927E00AB9427 /* ParserNodeException.h */,
-				A3FF93751A64927E00AB9427 /* Printer.h */,
-				A3FF93761A64927E00AB9427 /* Scenario.h */,
-				A3FF93771A64927E00AB9427 /* ScenarioParser.h */,
-				A3FF93781A64927E00AB9427 /* Step.h */,
-			);
-			path = Gherkin;
-			sourceTree = "<group>";
-		};
-		A3FF937B1A64927E00AB9427 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF937C1A64927E00AB9427 /* Node.cpp */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		A3FF93BD1A650E1400AB9427 /* ZingCpp */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF93BE1A650E1400AB9427 /* .gitignore */,
-				A3FF93BF1A650E1400AB9427 /* build */,
-				A3FF93C41A650E1400AB9427 /* include */,
-				A3FF93C71A650E1400AB9427 /* LICENSE */,
-				A3FF93C81A650E1400AB9427 /* README.md */,
-				A3FF93C91A650E1400AB9427 /* src */,
-			);
-			path = ZingCpp;
-			sourceTree = "<group>";
-		};
-		A3FF93BF1A650E1400AB9427 /* build */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF93C01A650E1400AB9427 /* osx */,
-			);
-			path = build;
-			sourceTree = "<group>";
-		};
-		A3FF93C01A650E1400AB9427 /* osx */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF93C11A650E1400AB9427 /* ZingCpp.xcodeproj */,
-			);
-			path = osx;
-			sourceTree = "<group>";
-		};
-		A3FF93C21A650E1400AB9427 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF93CD1A650E1400AB9427 /* libZingCpp.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A3FF93C41A650E1400AB9427 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF93C51A650E1400AB9427 /* ZingCpp */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		A3FF93C51A650E1400AB9427 /* ZingCpp */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF93C61A650E1400AB9427 /* Args.h */,
-			);
-			path = ZingCpp;
-			sourceTree = "<group>";
-		};
-		A3FF93C91A650E1400AB9427 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				A3FF93CA1A650E1400AB9427 /* Args.cpp */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -328,8 +177,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				A3FF93CF1A650E2000AB9427 /* PBXTargetDependency */,
-				A3FF938F1A64933000AB9427 /* PBXTargetDependency */,
+				A304F4721A66AAF10092DB7A /* PBXTargetDependency */,
+				A304F46E1A66AAEA0092DB7A /* PBXTargetDependency */,
 			);
 			name = Pepper;
 			productName = Pepper;
@@ -362,12 +211,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = A3FF93691A64927E00AB9427 /* Products */;
-					ProjectRef = A3FF93681A64927E00AB9427 /* Gherkin-Cpp.xcodeproj */;
+					ProductGroup = A304F45C1A66A9AB0092DB7A /* Products */;
+					ProjectRef = A304F45B1A66A9AB0092DB7A /* Gherkin-Cpp.xcodeproj */;
 				},
 				{
-					ProductGroup = A3FF93C21A650E1400AB9427 /* Products */;
-					ProjectRef = A3FF93C11A650E1400AB9427 /* ZingCpp.xcodeproj */;
+					ProductGroup = A304F4621A66A9B90092DB7A /* Products */;
+					ProjectRef = A304F4611A66A9B90092DB7A /* ZingCpp.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -378,18 +227,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A3FF937F1A64927E00AB9427 /* libGherkin-Cpp.a */ = {
+		A304F4601A66A9AB0092DB7A /* libGherkin-Cpp.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libGherkin-Cpp.a";
-			remoteRef = A3FF937E1A64927E00AB9427 /* PBXContainerItemProxy */;
+			remoteRef = A304F45F1A66A9AB0092DB7A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A3FF93CD1A650E1400AB9427 /* libZingCpp.a */ = {
+		A304F4661A66A9B90092DB7A /* libZingCpp.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libZingCpp.a;
-			remoteRef = A3FF93CC1A650E1400AB9427 /* PBXContainerItemProxy */;
+			remoteRef = A304F4651A66A9B90092DB7A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -410,15 +259,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A3FF938F1A64933000AB9427 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Gherkin-Cpp";
-			targetProxy = A3FF938E1A64933000AB9427 /* PBXContainerItemProxy */;
-		};
-		A3FF93CF1A650E2000AB9427 /* PBXTargetDependency */ = {
+		A304F46E1A66AAEA0092DB7A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ZingCpp;
-			targetProxy = A3FF93CE1A650E2000AB9427 /* PBXContainerItemProxy */;
+			targetProxy = A304F46D1A66AAEA0092DB7A /* PBXContainerItemProxy */;
+		};
+		A304F4721A66AAF10092DB7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Gherkin-Cpp";
+			targetProxy = A304F4711A66AAF10092DB7A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

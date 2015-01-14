@@ -7,7 +7,7 @@
 //
 
 #include "Step.h"
-#include "Args.h"
+#include <ZingCpp/Args.h>
 
 namespace Zing { namespace Pepper { namespace StepDefinitions {
 

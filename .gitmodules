@@ -1,0 +1,6 @@
+[submodule "dependencies/Gherkin-Cpp"]
+	path = dependencies/Gherkin-Cpp
+	url = https://github.com/dmeehan1968/Gherkin-Cpp.git
+[submodule "dependencies/ZingCpp"]
+	path = dependencies/ZingCpp
+	url = https://github.com/dmeehan1968/ZingCpp.git

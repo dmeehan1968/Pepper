@@ -15,37 +15,14 @@
 #include <iostream>
 #include <list>
 
-#include "Feature.h"
-
-#include <Gherkin/NodeVisitor.h>
-#include <Gherkin/Node.h>
-#include <Gherkin/Feature.h>
-#include <Gherkin/Scenario.h>
-#include <Gherkin/Step.h>
-#include <Gherkin/Printer.h>
-#include <Gherkin/NodeFactory.h>
-#include <Gherkin/ParserNodeException.h>
-#include <Gherkin/AbstractParser.h>
-#include <Gherkin/ScenarioParser.h>
-#include <Gherkin/FeatureParser.h>
-#include <Gherkin/GherkinParser.h>
+#include <Gherkin-Cpp/GherkinParser.h>
+#include <Gherkin-Cpp/Printer.h>
 
 namespace Zing { namespace Pepper {
-
-    namespace StepDefinitions {
-
-        class Step;
-        class Before;
-
-    }
 
     class Pepper {
 
     public:
-
-        void add(std::shared_ptr<StepDefinitions::Step> const &step);
-
-        void before(std::shared_ptr<StepDefinitions::Before> const &before);
 
         template <typename InputIterator>
         void parse(InputIterator begin, InputIterator const end) {
@@ -70,17 +47,6 @@ namespace Zing { namespace Pepper {
 
         }
 
-    protected:
-
-        void invokeBeforesThatMatch(StepDefinitions::Feature &feature, std::string const &name);
-
-        void invokeStepsThatMatch(StepDefinitions::Feature &feature, std::string const &name);
-        
-    private:
-        
-        std::list<std::shared_ptr<StepDefinitions::Step>>        _steps;
-        std::list<std::shared_ptr<StepDefinitions::Before>>      _befores;
-        
     };
 
 } }
