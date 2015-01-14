@@ -8,10 +8,10 @@
 
 #include "Feature.h"
 
-namespace Zing { namespace Pepper { namespace StepDefinitions {
+namespace Pepper {
 
     void Feature::setWorld(std::shared_ptr<World> const &world) {
         _world = world;
     }
 
-} } }
+}

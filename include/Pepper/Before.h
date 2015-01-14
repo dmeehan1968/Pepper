@@ -17,7 +17,7 @@
 #include <memory>
 #include <regex>
 
-namespace Zing { namespace Pepper { namespace StepDefinitions {
+namespace Pepper {
 
     class Before {
 
@@ -38,6 +38,6 @@ namespace Zing { namespace Pepper { namespace StepDefinitions {
         
     };
 
-} } }
+}
 
 #endif /* defined(__DelegateTest__Before__) */

@@ -11,7 +11,7 @@
 
 #include <memory>
 
-namespace Zing { namespace Pepper { namespace StepDefinitions {
+namespace Pepper {
 
     class World;
 
@@ -34,6 +34,6 @@ namespace Zing { namespace Pepper { namespace StepDefinitions {
         
     };
 
-} } }
+}
 
 #endif /* defined(__DelegateTest__Feature__) */

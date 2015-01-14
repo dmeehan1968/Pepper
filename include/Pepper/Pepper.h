@@ -18,7 +18,7 @@
 #include <Gherkin-Cpp/GherkinParser.h>
 #include <Gherkin-Cpp/Printer.h>
 
-namespace Zing { namespace Pepper {
+namespace Pepper {
 
     class Pepper {
 
@@ -49,6 +49,6 @@ namespace Zing { namespace Pepper {
 
     };
 
-} }
+}
 
 #endif /* defined(__DelegateTest__Pepper__) */

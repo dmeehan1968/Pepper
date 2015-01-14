@@ -8,10 +8,10 @@
 
 #include "World.h"
 
-namespace Zing { namespace Pepper { namespace StepDefinitions {
+namespace Pepper {
 
     World::~World() {
 
     }
 
-} } }
+}

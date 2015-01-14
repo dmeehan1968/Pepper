@@ -9,7 +9,7 @@
 #include "Before.h"
 #include <ZingCpp/Args.h>
 
-namespace Zing { namespace Pepper { namespace StepDefinitions {
+namespace Pepper {
 
     Before::Before(std::string const &expr, std::regex::flag_type flags)
     :
@@ -18,13 +18,13 @@ namespace Zing { namespace Pepper { namespace StepDefinitions {
 
     Before::~Before() {}
 
-    std::unique_ptr<Args> Before::accepts(std::string const &string) {
+    std::unique_ptr<Zing::Args> Before::accepts(std::string const &string) {
 
         std::smatch matches;
 
         if (std::regex_match(string, matches, _expr)) {
 
-            auto args = std::unique_ptr<Args>(new Args());
+            auto args = std::unique_ptr<Zing::Args>(new Zing::Args());
 
             if (matches.size() > 1) {
 
@@ -44,4 +44,4 @@ namespace Zing { namespace Pepper { namespace StepDefinitions {
 
     }
 
-} } }
+}

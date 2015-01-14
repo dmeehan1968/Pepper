@@ -8,6 +8,3 @@
 
 #include "Pepper.h"
 
-namespace Zing { namespace Pepper {
-
-} }
