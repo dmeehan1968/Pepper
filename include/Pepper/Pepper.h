@@ -26,9 +26,10 @@ namespace Pepper {
 
                 using namespace Gherkin;
 
-                auto root = std::make_shared<Node>();
+                auto location = std::make_shared<Location>("test.feature");
+                auto root = std::make_shared<Node>(*location);
 
-                GherkinParser<decltype(begin)>(begin, end, root).parse();
+                GherkinParser<decltype(begin)>(begin, end, location, root).parse();
 
                 Printer printer;
                 root->accept(printer);
