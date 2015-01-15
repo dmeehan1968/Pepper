@@ -26,7 +26,7 @@ namespace Pepper {
         Step(std::string const &expr,
              std::regex::flag_type flags = std::regex::ECMAScript);
 
-        std::unique_ptr<Zing::Args> accepts(std::string const &string) const;
+        std::unique_ptr<Zing::Args> accept(std::string const &string) const;
 
         virtual void operator()(Zing::Args &args) = 0;
 

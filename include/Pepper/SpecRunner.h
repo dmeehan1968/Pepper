@@ -9,9 +9,12 @@
 #ifndef Pepper_SpecRunner_h
 #define Pepper_SpecRunner_h
 
-#include "Step.h"
 #include "Before.h"
+#include "Befores.h"
 #include "Feature.h"
+#include "Formatter.h"
+#include "Step.h"
+#include "Steps.h"
 
 #include <Gherkin-Cpp/NodeVisitor.h> 
 #include <Gherkin-Cpp/Node.h>
@@ -25,21 +28,24 @@ namespace Pepper {
 
     public:
 
+        SpecRunner(std::shared_ptr<Formatter> const &formatter)
+        :
+        _formatter(formatter)
+        {}
+
         void add(std::shared_ptr<Step> const &step) {
 
-            _steps.emplace_back(step);
+            _steps.push_back(step);
 
         }
 
         void add(std::shared_ptr<Before> const &before) {
 
-            _befores.emplace_back(before);
+            _befores.push_back(before);
 
         }
 
         void visit(Gherkin::Node &node) {
-
-            std::cout << node << std::endl;
 
             doChildren(node);
 
@@ -47,85 +53,67 @@ namespace Pepper {
 
         void visit(Gherkin::Feature &node) {
 
-            std::cout << node << std::endl;
+            _formatter->before(node);
 
             _currentFeature = std::make_shared<Feature>();
 
-            doBefores(node);
+            _befores.accept(node.name(), *_currentFeature);
 
             doChildren(node);
 
             _currentFeature.reset();
 
+            _formatter->after(node);
+
         }
 
         void visit(Gherkin::Scenario &node) {
 
-            std::cout << node << std::endl;
+            _formatter->before(node);
 
-            doBefores(node);
+            _befores.accept(node.name(), *_currentFeature);
 
             doChildren(node);
+
+            _formatter->after(node);
 
         }
 
         void visit(Gherkin::Step &node) {
 
-            std::cout << node << std::endl;
+            _formatter->before(node);
 
-            doBefores(node);
+            _befores.accept(node.name(), *_currentFeature);
 
-            for (auto &step : _steps) {
-
-                auto args = step->accepts(node.name());
-
-                if (args) {
-
-                    step->setWorld(_currentFeature->world<World>());
-                    
-                    (*step)(*args);
-
-                }
-            }
+            _steps.accept(node.name(), _currentFeature);
 
             doChildren(node);
 
+            _formatter->after(node);
 
         }
 
     protected:
-
-        void doBefores(Gherkin::Node &node) {
-
-            for (auto &before : _befores) {
-
-                auto args = before->accept(node.name());
-
-                if (args) {
-
-                    (*before)(*_currentFeature, *args);
-
-                }
-            }
-        }
 
         void doChildren(Gherkin::Node &node) {
 
             for (auto &child : node.children()) {
 
                 child->accept(*this);
-                
+
             }
 
         }
 
     private:
 
-        std::list<std::shared_ptr<Step>>    _steps;
-        std::list<std::shared_ptr<Before>>  _befores;
+        std::shared_ptr<Formatter>          _formatter;
+
+        Steps                               _steps;
+        Befores                             _befores;
 
         std::shared_ptr<Feature>            _currentFeature;
-        
+
     };
 
 }

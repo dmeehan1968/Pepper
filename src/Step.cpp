@@ -16,7 +16,7 @@ namespace Pepper {
         _expr(expr, flags)
     { }
 
-    std::unique_ptr<Zing::Args> Step::accepts(std::string const &string) const {
+    std::unique_ptr<Zing::Args> Step::accept(std::string const &string) const {
 
         std::smatch matches;
 
