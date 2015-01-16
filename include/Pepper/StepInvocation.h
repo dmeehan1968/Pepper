@@ -10,64 +10,10 @@
 #define Pepper_StepInvocation_h
 
 #include "AbstractInvocation.h"
+#include "InvocationState.h"
+#include "InvocationException.h"
 
 namespace Pepper {
-
-    enum class InvocationState {
-        Pending,
-        Undefined,
-        Skipped,
-        Failed,
-        Passed
-    };
-
-    char const *to_string(InvocationState const &state) {
-
-        switch (state) {
-            case InvocationState::Pending:
-                return "Pending";
-
-            case InvocationState::Undefined:
-                return "Undefined";
-
-            case InvocationState::Skipped:
-                return "Skipped";
-
-            case InvocationState::Failed:
-                return "Failed";
-
-            case InvocationState::Passed:
-                return "Passed";
-
-        }
-
-        throw std::runtime_error("Unknown InvocationState");
-
-    }
-
-    class InvocationException : public std::runtime_error {
-
-    public:
-
-        InvocationException(InvocationState const state,
-                            std::string const &str)
-        :
-        _state(state),
-        std::runtime_error(str)
-        {}
-
-        InvocationException(InvocationState const state,
-                            char const *str)
-        :
-        _state(state),
-        std::runtime_error(str)
-        {}
-
-    public:
-
-        InvocationState     _state;
-
-    };
 
     class StepInvocation : public AbstractInvocation {
 

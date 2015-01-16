@@ -16,6 +16,8 @@
 		A3899AA11A69A06E00156AC7 /* ScenarioInvocation.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899AA01A69A06E00156AC7 /* ScenarioInvocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3899AA31A69A0AC00156AC7 /* FeatureInvocation.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899AA21A69A0AC00156AC7 /* FeatureInvocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3899AA51A69A0E300156AC7 /* RootInvocation.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899AA41A69A0E300156AC7 /* RootInvocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3BB6F2B1A69CCE3007DFAA2 /* InvocationState.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BB6F2A1A69CCE3007DFAA2 /* InvocationState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3BB6F2D1A69CD1B007DFAA2 /* InvocationException.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BB6F2C1A69CD1B007DFAA2 /* InvocationException.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3FF93401A6491DB00AB9427 /* Before.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933B1A6491DB00AB9427 /* Before.cpp */; };
 		A3FF93411A6491DB00AB9427 /* Feature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933C1A6491DB00AB9427 /* Feature.cpp */; };
 		A3FF93421A6491DB00AB9427 /* Pepper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933D1A6491DB00AB9427 /* Pepper.cpp */; };
@@ -71,6 +73,8 @@
 		A3899AA01A69A06E00156AC7 /* ScenarioInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenarioInvocation.h; sourceTree = "<group>"; };
 		A3899AA21A69A0AC00156AC7 /* FeatureInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureInvocation.h; sourceTree = "<group>"; };
 		A3899AA41A69A0E300156AC7 /* RootInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInvocation.h; sourceTree = "<group>"; };
+		A3BB6F2A1A69CCE3007DFAA2 /* InvocationState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvocationState.h; sourceTree = "<group>"; };
+		A3BB6F2C1A69CD1B007DFAA2 /* InvocationException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvocationException.h; sourceTree = "<group>"; };
 		A3FF931E1A648E5F00AB9427 /* libPepper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPepper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FF93321A648F2500AB9427 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		A3FF93361A6491BE00AB9427 /* Before.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Before.h; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				A3FF93371A6491BE00AB9427 /* Feature.h */,
 				A3899AA21A69A0AC00156AC7 /* FeatureInvocation.h */,
 				A3899A8F1A67E69D00156AC7 /* Formatter.h */,
+				A3BB6F2C1A69CD1B007DFAA2 /* InvocationException.h */,
+				A3BB6F2A1A69CCE3007DFAA2 /* InvocationState.h */,
 				A3899A911A67E6E100156AC7 /* PrettyPrint.h */,
 				A3FF93381A6491BE00AB9427 /* Pepper.h */,
 				A3899AA41A69A0E300156AC7 /* RootInvocation.h */,
@@ -186,7 +192,9 @@
 				A3FF93901A64935200AB9427 /* Before.h in Headers */,
 				A3899A8E1A67E63B00156AC7 /* Befores.h in Headers */,
 				A3899AA31A69A0AC00156AC7 /* FeatureInvocation.h in Headers */,
+				A3BB6F2D1A69CD1B007DFAA2 /* InvocationException.h in Headers */,
 				A3FF93911A64935200AB9427 /* Feature.h in Headers */,
+				A3BB6F2B1A69CCE3007DFAA2 /* InvocationState.h in Headers */,
 				A3899A901A67E69D00156AC7 /* Formatter.h in Headers */,
 				A3FF93921A64935200AB9427 /* Pepper.h in Headers */,
 				A3899AA11A69A06E00156AC7 /* ScenarioInvocation.h in Headers */,
