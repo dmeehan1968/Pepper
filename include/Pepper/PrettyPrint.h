@@ -51,7 +51,7 @@ namespace Pepper {
 
         }
 
-        void after(Gherkin::Scenario const &scenario, Statistic const &stat) override {
+        void after(Gherkin::Scenario const &scenario) override {
 
             --_indent;
 
@@ -63,7 +63,7 @@ namespace Pepper {
 
         }
 
-        void after(Gherkin::Step const &step, Status const &status) override {
+        void after(Gherkin::Step const &step) override {
 
             _stepStream << indent() << format(step, Colon::Without) << std::endl;
 

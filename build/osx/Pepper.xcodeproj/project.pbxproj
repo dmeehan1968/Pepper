@@ -12,8 +12,6 @@
 		A3899A8E1A67E63B00156AC7 /* Befores.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899A8D1A67E63000156AC7 /* Befores.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3899A901A67E69D00156AC7 /* Formatter.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899A8F1A67E69D00156AC7 /* Formatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3899A921A67E6E100156AC7 /* PrettyPrint.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899A911A67E6E100156AC7 /* PrettyPrint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A3899A941A6804E400156AC7 /* Statistic.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899A931A6804E400156AC7 /* Statistic.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A3899A961A6823B600156AC7 /* Status.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899A951A6823B600156AC7 /* Status.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3FF93401A6491DB00AB9427 /* Before.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933B1A6491DB00AB9427 /* Before.cpp */; };
 		A3FF93411A6491DB00AB9427 /* Feature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933C1A6491DB00AB9427 /* Feature.cpp */; };
 		A3FF93421A6491DB00AB9427 /* Pepper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933D1A6491DB00AB9427 /* Pepper.cpp */; };
@@ -65,8 +63,6 @@
 		A3899A8D1A67E63000156AC7 /* Befores.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Befores.h; sourceTree = "<group>"; };
 		A3899A8F1A67E69D00156AC7 /* Formatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formatter.h; sourceTree = "<group>"; };
 		A3899A911A67E6E100156AC7 /* PrettyPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyPrint.h; sourceTree = "<group>"; };
-		A3899A931A6804E400156AC7 /* Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statistic.h; sourceTree = "<group>"; };
-		A3899A951A6823B600156AC7 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
 		A3FF931E1A648E5F00AB9427 /* libPepper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPepper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FF93321A648F2500AB9427 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		A3FF93361A6491BE00AB9427 /* Before.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Before.h; sourceTree = "<group>"; };
@@ -147,8 +143,6 @@
 				A3899A911A67E6E100156AC7 /* PrettyPrint.h */,
 				A3FF93381A6491BE00AB9427 /* Pepper.h */,
 				A304F4C81A67019B0092DB7A /* SpecRunner.h */,
-				A3899A931A6804E400156AC7 /* Statistic.h */,
-				A3899A951A6823B600156AC7 /* Status.h */,
 				A3FF93391A6491BE00AB9427 /* Step.h */,
 				A3899A8B1A67E57400156AC7 /* Steps.h */,
 				A3FF933A1A6491BE00AB9427 /* World.h */,
@@ -183,8 +177,6 @@
 				A3FF93921A64935200AB9427 /* Pepper.h in Headers */,
 				A3899A921A67E6E100156AC7 /* PrettyPrint.h in Headers */,
 				A304F4CA1A6701C00092DB7A /* SpecRunner.h in Headers */,
-				A3899A941A6804E400156AC7 /* Statistic.h in Headers */,
-				A3899A961A6823B600156AC7 /* Status.h in Headers */,
 				A3FF93931A64935200AB9427 /* Step.h in Headers */,
 				A3899A8C1A67E57400156AC7 /* Steps.h in Headers */,
 				A3FF93941A64935200AB9427 /* World.h in Headers */,
