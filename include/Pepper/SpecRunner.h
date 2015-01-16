@@ -13,6 +13,8 @@
 #include "Befores.h"
 #include "Feature.h"
 #include "Formatter.h"
+#include "Statistic.h"
+#include "Status.h"
 #include "Step.h"
 #include "Steps.h"
 
@@ -73,9 +75,12 @@ namespace Pepper {
 
             _befores.accept(node.name(), *_currentFeature);
 
+            _scenarioStat.clear();
+            _scenarioStat.total(node.children().size());
+
             doChildren(node);
 
-            _formatter->after(node);
+            _formatter->after(node, _scenarioStat);
 
         }
 
@@ -85,11 +90,22 @@ namespace Pepper {
 
             _befores.accept(node.name(), *_currentFeature);
 
-            _steps.accept(node.name(), _currentFeature);
+            Status status = Status::Pending;
 
-            doChildren(node);
+            try {
 
-            _formatter->after(node);
+                _steps.accept(node.name(), _currentFeature);
+
+                status = Status::Success;
+
+            } catch (std::exception &e) {
+
+                status = Status::Failed;
+                _scenarioStat.exception(std::make_shared<std::exception>(e));
+
+            }
+
+            _formatter->after(node, status);
 
         }
 
@@ -113,6 +129,7 @@ namespace Pepper {
         Befores                             _befores;
 
         std::shared_ptr<Feature>            _currentFeature;
+        Statistic                           _scenarioStat;
 
     };
 

@@ -11,6 +11,9 @@
 
 namespace Pepper {
 
+    class Statistic;
+    enum class Status;
+
     class Formatter {
 
     public:
@@ -21,10 +24,10 @@ namespace Pepper {
         virtual void after(Gherkin::Feature const &feature) {}
 
         virtual void before(Gherkin::Scenario const &scenario) {}
-        virtual void after(Gherkin::Scenario const &scenario) {}
+        virtual void after(Gherkin::Scenario const &scenario, Statistic const &stat) {}
 
         virtual void before(Gherkin::Step const &step) {}
-        virtual void after(Gherkin::Step const &step) {}
+        virtual void after(Gherkin::Step const &step, Status const &status) {}
 
     };
     

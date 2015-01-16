@@ -10,6 +10,8 @@
 #define Pepper_PrettyPrint_h
 
 #include "Formatter.h"
+#include "Statistic.h"
+#include "Status.h"
 
 #include <ostream>
 
@@ -45,20 +47,25 @@ namespace Pepper {
 
         void before(Gherkin::Scenario const &scenario) override {
 
-            *_stream << indent() << format(scenario, Colon::With) << std::endl;
             ++_indent;
 
         }
 
-        void after(Gherkin::Scenario const &scenario) override {
+        void after(Gherkin::Scenario const &scenario, Statistic const &stat) override {
 
             --_indent;
 
+            *_stream << std::endl << indent() << format(scenario, Colon::With) << std::endl;
+
+            *_stream << _stepStream.str();
+
+            _stepStream.str("");
+
         }
 
-        void before(Gherkin::Step const &step) override {
+        void after(Gherkin::Step const &step, Status const &status) override {
 
-            *_stream << indent() << format(step, Colon::Without) << std::endl;
+            _stepStream << indent() << format(step, Colon::Without) << std::endl;
 
         }
 
@@ -82,12 +89,13 @@ namespace Pepper {
             return os.str();
             
         }
-        
+
     private:
         
         std::shared_ptr<std::ostream>   _stream;
         size_t                          _indent;
-        
+        std::ostringstream              _stepStream;
+
     };
     
 }
