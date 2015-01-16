@@ -144,19 +144,19 @@
 		A3FF93341A648F3B00AB9427 /* Pepper */ = {
 			isa = PBXGroup;
 			children = (
+				A3899A9C1A699F9100156AC7 /* AbstractInvocation.h */,
 				A3FF93361A6491BE00AB9427 /* Before.h */,
 				A3899A8D1A67E63000156AC7 /* Befores.h */,
 				A3FF93371A6491BE00AB9427 /* Feature.h */,
+				A3899AA21A69A0AC00156AC7 /* FeatureInvocation.h */,
 				A3899A8F1A67E69D00156AC7 /* Formatter.h */,
 				A3899A911A67E6E100156AC7 /* PrettyPrint.h */,
 				A3FF93381A6491BE00AB9427 /* Pepper.h */,
-				A3899AA21A69A0AC00156AC7 /* FeatureInvocation.h */,
-				A3899A9E1A69A01E00156AC7 /* StepInvocation.h */,
-				A3FF93391A6491BE00AB9427 /* Step.h */,
-				A3899A8B1A67E57400156AC7 /* Steps.h */,
-				A3899A9C1A699F9100156AC7 /* AbstractInvocation.h */,
 				A3899AA41A69A0E300156AC7 /* RootInvocation.h */,
 				A3899AA01A69A06E00156AC7 /* ScenarioInvocation.h */,
+				A3FF93391A6491BE00AB9427 /* Step.h */,
+				A3899A9E1A69A01E00156AC7 /* StepInvocation.h */,
+				A3899A8B1A67E57400156AC7 /* Steps.h */,
 				A3FF933A1A6491BE00AB9427 /* World.h */,
 			);
 			path = Pepper;
