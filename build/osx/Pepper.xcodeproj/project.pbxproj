@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A304F4CA1A6701C00092DB7A /* SpecRunner.h in Headers */ = {isa = PBXBuildFile; fileRef = A304F4C81A67019B0092DB7A /* SpecRunner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3899A8C1A67E57400156AC7 /* Steps.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899A8B1A67E57400156AC7 /* Steps.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3899A8E1A67E63B00156AC7 /* Befores.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899A8D1A67E63000156AC7 /* Befores.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3899A901A67E69D00156AC7 /* Formatter.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899A8F1A67E69D00156AC7 /* Formatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3899A921A67E6E100156AC7 /* PrettyPrint.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899A911A67E6E100156AC7 /* PrettyPrint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3899A9D1A699F9100156AC7 /* AbstractInvocation.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899A9C1A699F9100156AC7 /* AbstractInvocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3899A9F1A69A01E00156AC7 /* StepInvocation.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899A9E1A69A01E00156AC7 /* StepInvocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3899AA11A69A06E00156AC7 /* ScenarioInvocation.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899AA01A69A06E00156AC7 /* ScenarioInvocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3899AA31A69A0AC00156AC7 /* FeatureInvocation.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899AA21A69A0AC00156AC7 /* FeatureInvocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3899AA51A69A0E300156AC7 /* RootInvocation.h in Headers */ = {isa = PBXBuildFile; fileRef = A3899AA41A69A0E300156AC7 /* RootInvocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3FF93401A6491DB00AB9427 /* Before.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933B1A6491DB00AB9427 /* Before.cpp */; };
 		A3FF93411A6491DB00AB9427 /* Feature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933C1A6491DB00AB9427 /* Feature.cpp */; };
 		A3FF93421A6491DB00AB9427 /* Pepper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3FF933D1A6491DB00AB9427 /* Pepper.cpp */; };
@@ -58,11 +62,15 @@
 /* Begin PBXFileReference section */
 		A304F45B1A66A9AB0092DB7A /* Gherkin-Cpp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Gherkin-Cpp.xcodeproj"; path = "../../dependencies/Gherkin-Cpp/build/osx/Gherkin-Cpp.xcodeproj"; sourceTree = "<group>"; };
 		A304F4611A66A9B90092DB7A /* ZingCpp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZingCpp.xcodeproj; path = ../../dependencies/ZingCpp/build/osx/ZingCpp.xcodeproj; sourceTree = "<group>"; };
-		A304F4C81A67019B0092DB7A /* SpecRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecRunner.h; sourceTree = "<group>"; };
 		A3899A8B1A67E57400156AC7 /* Steps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Steps.h; sourceTree = "<group>"; };
 		A3899A8D1A67E63000156AC7 /* Befores.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Befores.h; sourceTree = "<group>"; };
 		A3899A8F1A67E69D00156AC7 /* Formatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formatter.h; sourceTree = "<group>"; };
 		A3899A911A67E6E100156AC7 /* PrettyPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyPrint.h; sourceTree = "<group>"; };
+		A3899A9C1A699F9100156AC7 /* AbstractInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractInvocation.h; sourceTree = "<group>"; };
+		A3899A9E1A69A01E00156AC7 /* StepInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepInvocation.h; sourceTree = "<group>"; };
+		A3899AA01A69A06E00156AC7 /* ScenarioInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenarioInvocation.h; sourceTree = "<group>"; };
+		A3899AA21A69A0AC00156AC7 /* FeatureInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureInvocation.h; sourceTree = "<group>"; };
+		A3899AA41A69A0E300156AC7 /* RootInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInvocation.h; sourceTree = "<group>"; };
 		A3FF931E1A648E5F00AB9427 /* libPepper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPepper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FF93321A648F2500AB9427 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		A3FF93361A6491BE00AB9427 /* Before.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Before.h; sourceTree = "<group>"; };
@@ -142,9 +150,13 @@
 				A3899A8F1A67E69D00156AC7 /* Formatter.h */,
 				A3899A911A67E6E100156AC7 /* PrettyPrint.h */,
 				A3FF93381A6491BE00AB9427 /* Pepper.h */,
-				A304F4C81A67019B0092DB7A /* SpecRunner.h */,
+				A3899AA21A69A0AC00156AC7 /* FeatureInvocation.h */,
+				A3899A9E1A69A01E00156AC7 /* StepInvocation.h */,
 				A3FF93391A6491BE00AB9427 /* Step.h */,
 				A3899A8B1A67E57400156AC7 /* Steps.h */,
+				A3899A9C1A699F9100156AC7 /* AbstractInvocation.h */,
+				A3899AA41A69A0E300156AC7 /* RootInvocation.h */,
+				A3899AA01A69A06E00156AC7 /* ScenarioInvocation.h */,
 				A3FF933A1A6491BE00AB9427 /* World.h */,
 			);
 			path = Pepper;
@@ -170,13 +182,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3899A9D1A699F9100156AC7 /* AbstractInvocation.h in Headers */,
 				A3FF93901A64935200AB9427 /* Before.h in Headers */,
 				A3899A8E1A67E63B00156AC7 /* Befores.h in Headers */,
+				A3899AA31A69A0AC00156AC7 /* FeatureInvocation.h in Headers */,
 				A3FF93911A64935200AB9427 /* Feature.h in Headers */,
 				A3899A901A67E69D00156AC7 /* Formatter.h in Headers */,
 				A3FF93921A64935200AB9427 /* Pepper.h in Headers */,
+				A3899AA11A69A06E00156AC7 /* ScenarioInvocation.h in Headers */,
 				A3899A921A67E6E100156AC7 /* PrettyPrint.h in Headers */,
-				A304F4CA1A6701C00092DB7A /* SpecRunner.h in Headers */,
+				A3899AA51A69A0E300156AC7 /* RootInvocation.h in Headers */,
+				A3899A9F1A69A01E00156AC7 /* StepInvocation.h in Headers */,
 				A3FF93931A64935200AB9427 /* Step.h in Headers */,
 				A3899A8C1A67E57400156AC7 /* Steps.h in Headers */,
 				A3FF93941A64935200AB9427 /* World.h in Headers */,
