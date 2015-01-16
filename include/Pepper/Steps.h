@@ -23,12 +23,15 @@ namespace Pepper {
 
     public:
 
-        void push_back(std::shared_ptr<Step> const &step) {
-            _steps.push_back(step);
-        }
+        template <class T, class... Args>
+        void add(Args... args) {
 
+            _steps.emplace_back(std::make_shared<T>(args...));
+
+        }
+        
         void accept(std::string const &name,
-                    std::shared_ptr<Feature> const &feature) {
+                    std::shared_ptr<Feature> const &feature) const {
 
             for (auto &step : _steps) {
 

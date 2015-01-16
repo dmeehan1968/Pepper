@@ -19,11 +19,14 @@ namespace Pepper {
 
     public:
 
-        void push_back(std::shared_ptr<Before> const &before) {
-            _befores.push_back(before);
+        template <class T, class... Args>
+        void add(Args... args) {
+
+            _befores.emplace_back(std::make_shared<T>(args...));
+
         }
 
-        void accept(std::string const &name, Feature &feature) {
+        void accept(std::string const &name, Feature &feature) const {
 
             for (auto &before : _befores) {
 

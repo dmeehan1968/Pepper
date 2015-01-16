@@ -24,94 +24,169 @@
 
 namespace Pepper {
 
-    class SpecRunner : public Gherkin::NodeVisitor {
+    class AbstractInvocation : public Gherkin::NodeVisitor {
 
     public:
 
-        SpecRunner(std::shared_ptr<Formatter> const &formatter)
+        AbstractInvocation(Befores const &befores,
+                           Steps const &steps,
+                           std::shared_ptr<Formatter> const &formatter)
         :
+        _befores(befores),
+        _steps(steps),
         _formatter(formatter)
         {}
 
-        void add(std::shared_ptr<Step> const &step) {
+        void visit(Gherkin::Node &node) override { }
+        void visit(Gherkin::Feature &node) override { }
+        void visit(Gherkin::Scenario &node) override { }
+        void visit(Gherkin::Step &step) override { }
 
-            _steps.push_back(step);
-
+        Befores const &befores() const {
+            return _befores;
         }
 
-        void add(std::shared_ptr<Before> const &before) {
-
-            _befores.push_back(before);
-
+        Steps const &steps() const {
+            return _steps;
         }
 
-        void visit(Gherkin::Node &node) {
-
-            doChildren(node);
-
+        std::shared_ptr<Formatter> const &formatter() const {
+            return _formatter;
         }
 
-        void visit(Gherkin::Feature &node) {
+    private:
 
-            _formatter->before(node);
+        Befores                         _befores;
+        Steps                           _steps;
+        std::shared_ptr<Formatter>      _formatter;
 
-            _currentFeature = std::make_shared<Feature>();
+    };
 
-            _befores.accept(node.name(), *_currentFeature);
+    class StepInvocation : public AbstractInvocation {
 
-            doChildren(node);
+    public:
 
-            _currentFeature.reset();
+        StepInvocation(Befores const &befores,
+                       Steps const &steps,
+                       std::shared_ptr<Formatter> const &formatter,
+                       std::shared_ptr<Feature> const &feature)
+        :
+        AbstractInvocation(befores, steps, formatter),
+        _feature(feature)
+        {}
 
-            _formatter->after(node);
+        void visit(Gherkin::Step &node) override {
 
+            formatter()->before(node);
+
+            befores().accept(node.name(), *_feature);
+
+            steps().accept(node.name(), _feature);
+
+            formatter()->after(node);
+
+            // TODO
+            
         }
 
-        void visit(Gherkin::Scenario &node) {
+    private:
 
-            _formatter->before(node);
+        std::shared_ptr<Feature>    _feature;
 
-            _befores.accept(node.name(), *_currentFeature);
+    };
 
-            doChildren(node);
+    class ScenarioInvocation : public AbstractInvocation {
 
-            _formatter->after(node);
+    public:
 
-        }
+        ScenarioInvocation(Befores const &befores,
+                           Steps const &steps,
+                           std::shared_ptr<Formatter> const &formatter,
+                           std::shared_ptr<Feature> const &feature)
+        :
+        AbstractInvocation(befores, steps, formatter),
+        _feature(feature)
+        {}
 
-        void visit(Gherkin::Step &node) {
+        void visit(Gherkin::Scenario &node) override {
 
-            _formatter->before(node);
+            formatter()->before(node);
 
-            _befores.accept(node.name(), *_currentFeature);
-
-            _steps.accept(node.name(), _currentFeature);
-
-            _formatter->after(node);
-
-        }
-
-    protected:
-
-        void doChildren(Gherkin::Node &node) {
+            befores().accept(node.name(), *_feature);
 
             for (auto &child : node.children()) {
 
-                child->accept(*this);
+                StepInvocation invocation(befores(), steps(), formatter(), _feature);
+
+                child->accept(invocation);
 
             }
+            
+            formatter()->after(node);
 
         }
 
     private:
 
-        std::shared_ptr<Formatter>          _formatter;
+        std::shared_ptr<Feature>    _feature;
 
-        Steps                               _steps;
-        Befores                             _befores;
+    };
 
-        std::shared_ptr<Feature>            _currentFeature;
+    class FeatureInvocation : public AbstractInvocation {
 
+    public:
+
+        FeatureInvocation(Befores const &befores,
+                          Steps const &steps,
+                          std::shared_ptr<Formatter> const &formatter)
+        :
+        AbstractInvocation(befores, steps, formatter)
+        {}
+
+        void visit(Gherkin::Feature &node) override {
+
+            formatter()->before(node);
+
+            auto feature = std::make_shared<Feature>();
+
+            befores().accept(node.name(), *feature);
+
+            for (auto &child : node.children()) {
+
+                ScenarioInvocation invocation(befores(), steps(), formatter(), feature);
+
+                child->accept(invocation);
+
+            }
+
+            formatter()->after(node);
+        }
+
+    };
+
+    class RootInvocation : public AbstractInvocation {
+
+    public:
+
+        RootInvocation(Befores const &befores,
+                       Steps const &steps,
+                       std::shared_ptr<Formatter> const &formatter)
+        :
+        AbstractInvocation(befores, steps, formatter)
+        {}
+
+        void visit(Gherkin::Node &node) override {
+
+            for (auto &child : node.children()) {
+
+                FeatureInvocation invocation(befores(), steps(), formatter());
+
+                child->accept(invocation);
+                
+            }
+            
+        }
+        
     };
 
 }
