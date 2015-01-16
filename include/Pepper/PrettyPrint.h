@@ -10,8 +10,9 @@
 #define Pepper_PrettyPrint_h
 
 #include "Formatter.h"
-#include "Statistic.h"
-#include "Status.h"
+#include "FeatureInvocation.h"
+#include "ScenarioInvocation.h"
+#include "StepInvocation.h"
 
 #include <ostream>
 
@@ -32,30 +33,27 @@ namespace Pepper {
         _indent(0)
         {}
 
-        void before(Gherkin::Feature const &feature) override {
 
-            *_stream << indent() << format(feature, Colon::With) << std::endl;
+        void before(FeatureInvocation const &invocation) override {
+
+            *_stream << indent() << format(*invocation.node(), Colon::With) << std::endl;
             ++_indent;
-
+            
         }
 
-        void after(Gherkin::Feature const &feature) override {
+        void after(FeatureInvocation const &invocation) override {
+            --_indent;
+        }
+
+        void before(ScenarioInvocation const &invocation) override {
+            ++_indent;
+        }
+
+        void after(ScenarioInvocation const &invocation) override {
 
             --_indent;
 
-        }
-
-        void before(Gherkin::Scenario const &scenario) override {
-
-            ++_indent;
-
-        }
-
-        void after(Gherkin::Scenario const &scenario) override {
-
-            --_indent;
-
-            *_stream << std::endl << indent() << format(scenario, Colon::With) << std::endl;
+            *_stream << std::endl << indent() << format(*invocation.node(), Colon::With) << std::endl;
 
             *_stream << _stepStream.str();
 
@@ -63,11 +61,12 @@ namespace Pepper {
 
         }
 
-        void after(Gherkin::Step const &step) override {
+        void after(StepInvocation const &invocation) override {
 
-            _stepStream << indent() << format(step, Colon::Without) << std::endl;
+            _stepStream << indent() << format(*invocation.node(), Colon::Without) << std::endl;
 
         }
+
 
     protected:
 

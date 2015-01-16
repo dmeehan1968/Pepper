@@ -11,23 +11,24 @@
 
 namespace Pepper {
 
-    class Statistic;
-    enum class Status;
-
+    class FeatureInvocation;
+    class ScenarioInvocation;
+    class StepInvocation;
+    
     class Formatter {
 
     public:
 
         virtual ~Formatter() = 0;
 
-        virtual void before(Gherkin::Feature const &feature) {}
-        virtual void after(Gherkin::Feature const &feature) {}
+        virtual void before(FeatureInvocation const &invocation) {}
+        virtual void after(FeatureInvocation const &invocation) {}
 
-        virtual void before(Gherkin::Scenario const &scenario) {}
-        virtual void after(Gherkin::Scenario const &scenario) {}
+        virtual void before(ScenarioInvocation const &invocation) {}
+        virtual void after(ScenarioInvocation const &invocation) {}
 
-        virtual void before(Gherkin::Step const &step) {}
-        virtual void after(Gherkin::Step const &step) {}
+        virtual void before(StepInvocation const &invocation) {}
+        virtual void after(StepInvocation const &invocation) {}
 
     };
     

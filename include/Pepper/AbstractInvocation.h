@@ -33,6 +33,16 @@ namespace Pepper {
         void visit(Gherkin::Scenario &node) override { }
         void visit(Gherkin::Step &step) override { }
 
+        std::shared_ptr<Gherkin::Node> const &node() const {
+            return _node;
+        }
+
+        void setNode(Gherkin::Node const &node) {
+            _node = std::make_shared<Gherkin::Node>(node);
+        }
+
+    protected:
+
         Befores const &befores() const {
             return _befores;
         }
@@ -50,6 +60,7 @@ namespace Pepper {
         Befores                         _befores;
         Steps                           _steps;
         std::shared_ptr<Formatter>      _formatter;
+        std::shared_ptr<Gherkin::Node>  _node;
 
     };
 

@@ -23,12 +23,21 @@ namespace Pepper {
                            std::shared_ptr<Feature> const &feature)
         :
         AbstractInvocation(befores, steps, formatter),
-        _feature(feature)
+        _feature(feature),
+        _passed(0),
+        _pending(0),
+        _undefined(0),
+        _skipped(0),
+        _failures(0)
         {}
 
         void visit(Gherkin::Scenario &node) override {
 
-            formatter()->before(node);
+            setNode(node);
+            
+            formatter()->before(*this);
+
+            _pending = node.children().size();
 
             befores().accept(node.name(), *_feature);
 
@@ -38,16 +47,67 @@ namespace Pepper {
 
                 child->accept(invocation);
 
+                _pending--;
+                switch (invocation.state()) {
+                    case InvocationState::Pending:
+                        _pending++;
+                        break;
+
+                    case InvocationState::Undefined:
+                        _undefined++;
+                        break;
+
+                    case InvocationState::Skipped:
+                        _skipped++;
+                        break;
+
+                    case InvocationState::Failed:
+                        _failures++;
+                        break;
+
+                    case InvocationState::Passed:
+                        _passed++;
+                        break;
+
+                    default:
+                        throw std::runtime_error("Illegal Invocation State");
+                }
+
             }
 
-            formatter()->after(node);
+            formatter()->after(*this);
             
+        }
+
+        size_t passed() const {
+            return _passed;
+        }
+
+        size_t pending() const {
+            return _pending;
+        }
+
+        size_t undefined() const {
+            return _undefined;
+        }
+
+        size_t skipped() const {
+            return _skipped;
+        }
+
+        size_t failures() const {
+            return _failures;
         }
         
     private:
         
         std::shared_ptr<Feature>    _feature;
-        
+        size_t                      _passed;
+        size_t                      _pending;
+        size_t                      _undefined;
+        size_t                      _skipped;
+        size_t                      _failures;
+
     };
 
 }

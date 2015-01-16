@@ -13,6 +13,62 @@
 
 namespace Pepper {
 
+    enum class InvocationState {
+        Pending,
+        Undefined,
+        Skipped,
+        Failed,
+        Passed
+    };
+
+    char const *to_string(InvocationState const &state) {
+
+        switch (state) {
+            case InvocationState::Pending:
+                return "Pending";
+
+            case InvocationState::Undefined:
+                return "Undefined";
+
+            case InvocationState::Skipped:
+                return "Skipped";
+
+            case InvocationState::Failed:
+                return "Failed";
+
+            case InvocationState::Passed:
+                return "Passed";
+
+        }
+
+        throw std::runtime_error("Unknown InvocationState");
+
+    }
+
+    class InvocationException : public std::runtime_error {
+
+    public:
+
+        InvocationException(InvocationState const state,
+                            std::string const &str)
+        :
+        _state(state),
+        std::runtime_error(str)
+        {}
+
+        InvocationException(InvocationState const state,
+                            char const *str)
+        :
+        _state(state),
+        std::runtime_error(str)
+        {}
+
+    public:
+
+        InvocationState     _state;
+
+    };
+
     class StepInvocation : public AbstractInvocation {
 
     public:
@@ -23,26 +79,44 @@ namespace Pepper {
                        std::shared_ptr<Feature> const &feature)
         :
         AbstractInvocation(befores, steps, formatter),
-        _feature(feature)
+        _feature(feature),
+        _state(InvocationState::Pending)
         {}
 
         void visit(Gherkin::Step &node) override {
 
-            formatter()->before(node);
+            setNode(node);
+
+            formatter()->before(*this);
 
             befores().accept(node.name(), *_feature);
 
-            steps().accept(node.name(), _feature);
+            try {
 
-            formatter()->after(node);
-            
-            // TODO
+                steps().accept(node.name(), _feature);
+
+                _state = InvocationState::Passed;
+
+            } catch (std::exception &e) {
+
+                _state = InvocationState::Failed;
+                _exception = std::make_shared<InvocationException>(_state, e.what());
+
+            }
+
+            formatter()->after(*this);
             
         }
-        
+
+        InvocationState state() const {
+            return _state;
+        }
+
     private:
         
-        std::shared_ptr<Feature>    _feature;
+        std::shared_ptr<Feature>                _feature;
+        InvocationState                         _state;
+        std::shared_ptr<InvocationException>    _exception;
         
     };
     

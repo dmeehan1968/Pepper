@@ -26,7 +26,9 @@ namespace Pepper {
 
         void visit(Gherkin::Feature &node) override {
 
-            formatter()->before(node);
+            setNode(node);
+            
+            formatter()->before(*this);
 
             auto feature = std::make_shared<Feature>();
 
@@ -40,7 +42,7 @@ namespace Pepper {
                 
             }
             
-            formatter()->after(node);
+            formatter()->after(*this);
         }
         
     };
