@@ -22,11 +22,13 @@ namespace Pepper {
         StepInvocation(Befores const &befores,
                        Steps const &steps,
                        std::shared_ptr<Formatter> const &formatter,
-                       std::shared_ptr<Feature> const &feature)
+                       std::shared_ptr<Feature> const &feature,
+                       bool const skip)
         :
         AbstractInvocation(befores, steps, formatter),
         _feature(feature),
-        _state(InvocationState::Pending)
+        _state(InvocationState::Pending),
+        _skip(skip)
         {}
 
         void visit(Gherkin::Step &node) override {
@@ -39,9 +41,16 @@ namespace Pepper {
 
             try {
 
-                steps().accept(node.name(), _feature);
+                if (skip()) {
 
-                _state = InvocationState::Passed;
+                    _state = InvocationState::Skipped;
+
+                } else {
+
+                    steps().accept(node.name(), _feature);
+                    _state = InvocationState::Passed;
+                    
+                }
 
             } catch (InvocationException &e) {
 
@@ -63,12 +72,17 @@ namespace Pepper {
             return _state;
         }
 
+        bool skip() const {
+            return _skip;
+        }
+
     private:
         
         std::shared_ptr<Feature>                _feature;
         InvocationState                         _state;
         std::shared_ptr<InvocationException>    _exception;
-        
+        bool                                    _skip;
+
     };
     
 }

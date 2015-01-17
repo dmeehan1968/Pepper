@@ -37,9 +37,11 @@ namespace Pepper {
 
             befores().accept(node.name(), *_feature);
 
+            bool skip = false;
+
             for (auto &child : node.children()) {
 
-                StepInvocation invocation(befores(), steps(), formatter(), _feature);
+                StepInvocation invocation(befores(), steps(), formatter(), _feature, skip);
 
                 child->accept(invocation);
 
@@ -51,6 +53,7 @@ namespace Pepper {
 
                     case InvocationState::Undefined:
                         undefined()++;
+                        skip = true;
                         break;
 
                     case InvocationState::Skipped:
@@ -59,6 +62,7 @@ namespace Pepper {
 
                     case InvocationState::Failed:
                         failures()++;
+                        skip = true;
                         break;
 
                     case InvocationState::Passed:
