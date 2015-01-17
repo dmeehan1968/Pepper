@@ -26,19 +26,24 @@ namespace Pepper {
 
     public:
 
-        Pepper(Befores const &befores, Steps const &steps)
+        Pepper(Befores const &befores,
+               Steps const &steps,
+               std::shared_ptr<Formatter> const &formatter)
         :
         _befores(befores),
-        _steps(steps)
+        _steps(steps),
+        _formatter(formatter)
         {}
 
         template <typename InputIterator>
-        void run(std::shared_ptr<Formatter> const &formatter, InputIterator begin, InputIterator const end) {
+        void run(std::shared_ptr<Gherkin::Location> const &location,
+                 InputIterator begin,
+                 InputIterator const end) {
 
-            auto root = parse(begin, end);
+            auto root = parse(location, begin, end);
 
             if (root) {
-                RootInvocation invocation(_befores, _steps, formatter);
+                RootInvocation invocation(_befores, _steps, _formatter);
                 root->accept(invocation);
             }
 
@@ -47,11 +52,12 @@ namespace Pepper {
     protected:
 
         template <typename InputIterator>
-        std::shared_ptr<Gherkin::Node> parse(InputIterator begin, InputIterator const end) {
+        std::shared_ptr<Gherkin::Node> parse(std::shared_ptr<Gherkin::Location> const &location,
+                                             InputIterator begin,
+                                             InputIterator const end) {
 
             try {
 
-                auto location = std::make_shared<Gherkin::Location>("test.feature");
                 auto root = std::make_shared<Gherkin::Node>(*location);
 
                 Gherkin::GherkinParser<decltype(begin)>(begin, end, location, root).parse();
@@ -70,8 +76,9 @@ namespace Pepper {
 
     private:
 
-        Befores     _befores;
-        Steps       _steps;
+        Befores                     _befores;
+        Steps                       _steps;
+        std::shared_ptr<Formatter>  _formatter;
 
 
     };
