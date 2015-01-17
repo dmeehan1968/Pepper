@@ -9,6 +9,8 @@
 #ifndef Pepper_InvocationException_h
 #define Pepper_InvocationException_h
 
+#include "InvocationState.h"
+
 namespace Pepper {
 
     class InvocationException : public std::runtime_error {
@@ -29,6 +31,10 @@ namespace Pepper {
         std::runtime_error(str)
         {}
 
+        InvocationState state() const {
+            return _state;
+        }
+        
     public:
 
         InvocationState     _state;

@@ -43,6 +43,11 @@ namespace Pepper {
 
                 _state = InvocationState::Passed;
 
+            } catch (InvocationException &e) {
+
+                _state = e.state();
+                _exception = std::make_shared<InvocationException>(e);
+                
             } catch (std::exception &e) {
 
                 _state = InvocationState::Failed;

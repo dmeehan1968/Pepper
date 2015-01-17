@@ -11,9 +11,9 @@
 
 #include "Step.h"
 #include "Feature.h"
+#include "InvocationException.h"
 
 #include <list>
-#include <exception>
 
 namespace Pepper {
 
@@ -46,7 +46,7 @@ namespace Pepper {
                 }
             }
 
-            throw std::runtime_error("Undefined");
+            throw InvocationException(InvocationState::Undefined, "Undefined");
             
         }
         
