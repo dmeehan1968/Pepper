@@ -11,6 +11,7 @@
 
 namespace Pepper {
 
+    class RootInvocation;
     class FeatureInvocation;
     class ScenarioInvocation;
     class StepInvocation;
@@ -20,6 +21,9 @@ namespace Pepper {
     public:
 
         virtual ~Formatter() = 0;
+
+        virtual void before(RootInvocation const &invocation) {}
+        virtual void after(RootInvocation const &invocation) {}
 
         virtual void before(FeatureInvocation const &invocation) {}
         virtual void after(FeatureInvocation const &invocation) {}

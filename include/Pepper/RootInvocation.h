@@ -26,6 +26,8 @@ namespace Pepper {
 
         void visit(Gherkin::Node &node) override {
 
+            formatter()->before(*this);
+
             for (auto &child : node.children()) {
 
                 FeatureInvocation invocation(befores(), steps(), formatter());
@@ -34,6 +36,8 @@ namespace Pepper {
 
             }
             
+            formatter()->after(*this);
+
         }
         
     };

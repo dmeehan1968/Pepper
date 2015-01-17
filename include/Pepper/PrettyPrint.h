@@ -15,6 +15,8 @@
 #include "StepInvocation.h"
 
 #include <ostream>
+#include <chrono>
+#include <math.h>
 
 namespace Pepper {
 
@@ -33,6 +35,25 @@ namespace Pepper {
         _indent(0)
         {}
 
+        void before(RootInvocation const &invocation) {
+
+            _start = std::chrono::high_resolution_clock::now();
+
+        }
+
+        void after(RootInvocation const &invocation) {
+
+            auto time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - _start);
+
+            auto msecs = time.count();
+            auto minutes = floor(msecs / 60000);
+            msecs -= minutes * 60000;
+            auto seconds = floor(msecs / 1000);
+            msecs -= seconds * 1000;
+
+            *_stream << minutes << "m" << seconds << "." << msecs << "s" << std::endl;
+
+        }
 
         void before(FeatureInvocation const &invocation) override {
 
@@ -146,6 +167,8 @@ namespace Pepper {
         std::shared_ptr<std::ostream>   _stream;
         size_t                          _indent;
         std::ostringstream              _stepStream;
+
+        std::chrono::high_resolution_clock::time_point  _start;
 
     };
     
