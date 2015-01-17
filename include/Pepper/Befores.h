@@ -20,9 +20,10 @@ namespace Pepper {
     public:
 
         template <class T, class... Args>
-        void add(Args... args) {
+        Befores &add(Args... args) {
 
             _befores.emplace_back(std::make_shared<T>(args...));
+            return *this;
 
         }
 

@@ -24,9 +24,10 @@ namespace Pepper {
     public:
 
         template <class T, class... Args>
-        void add(Args... args) {
+        Steps &add(Args... args) {
 
             _steps.emplace_back(std::make_shared<T>(args...));
+            return *this;
 
         }
         
