@@ -13,6 +13,12 @@
 #include "Steps.h"
 #include "Formatter.h"
 
+#include <Gherkin-Cpp/NodeVisitor.h>
+#include <Gherkin-Cpp/Node.h>
+#include <Gherkin-Cpp/Feature.h>
+#include <Gherkin-Cpp/Scenario.h>
+#include <Gherkin-Cpp/Step.h>
+
 namespace Pepper {
 
     class AbstractInvocation : public Gherkin::NodeVisitor {

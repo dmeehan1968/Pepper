@@ -9,6 +9,10 @@
 #ifndef __DelegateTest__Pepper__
 #define __DelegateTest__Pepper__
 
+#include "RootInvocation.h"
+#include "Befores.h"
+#include "Steps.h"
+
 #include <Gherkin-Cpp/GherkinParser.h>
 
 #include <iostream>
@@ -21,6 +25,26 @@ namespace Pepper {
     class Pepper {
 
     public:
+
+        Pepper(Befores const &befores, Steps const &steps)
+        :
+        _befores(befores),
+        _steps(steps)
+        {}
+
+        template <typename InputIterator>
+        void run(std::shared_ptr<Formatter> const &formatter, InputIterator begin, InputIterator const end) {
+
+            auto root = parse(begin, end);
+
+            if (root) {
+                RootInvocation invocation(_befores, _steps, formatter);
+                root->accept(invocation);
+            }
+
+        }
+
+    protected:
 
         template <typename InputIterator>
         std::shared_ptr<Gherkin::Node> parse(InputIterator begin, InputIterator const end) {
@@ -43,6 +67,12 @@ namespace Pepper {
             return {};
             
         }
+
+    private:
+
+        Befores     _befores;
+        Steps       _steps;
+
 
     };
 
