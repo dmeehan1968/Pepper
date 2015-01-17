@@ -10,10 +10,11 @@
 #define Pepper_FeatureInvocation_h
 
 #include "ScenarioInvocation.h"
+#include "StepCounters.h"
 
 namespace Pepper {
 
-    class FeatureInvocation : public AbstractInvocation {
+    class FeatureInvocation : public AbstractInvocation, public StepCounters {
 
     public:
 
@@ -39,12 +40,20 @@ namespace Pepper {
                 ScenarioInvocation invocation(befores(), steps(), formatter(), feature);
 
                 child->accept(invocation);
-                
+
+                passed() += invocation.passed();
+                pending() += invocation.pending();
+                undefined() += invocation.undefined();
+                skipped() += invocation.skipped();
+                failures() += invocation.failures();
+
             }
             
             formatter()->after(*this);
         }
-        
+
+    private:
+
     };
 
 }

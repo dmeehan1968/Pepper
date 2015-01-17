@@ -43,6 +43,47 @@ namespace Pepper {
 
         void after(FeatureInvocation const &invocation) override {
             --_indent;
+
+            *_stream    << indent() << std::endl
+                        << invocation.total() << " steps";
+
+            if (invocation.total()) {
+                *_stream << " (";
+            }
+
+            bool comma = false;
+
+            if (invocation.failures()) {
+                *_stream << (comma ? ", " : "") << invocation.failures() << " failed";
+                comma = true;
+            }
+
+            if (invocation.pending()) {
+                *_stream << (comma ? ", " : "") << invocation.pending() << " pending";
+                comma = true;
+            }
+
+            if (invocation.undefined()) {
+                *_stream << (comma ? ", " : "") << invocation.undefined() << " undefined";
+                comma = true;
+            }
+
+            if (invocation.skipped()) {
+                *_stream << (comma ? ", " : "") << invocation.skipped() << " skipped";
+                comma = true;
+            }
+
+            if (invocation.passed()) {
+                *_stream << (comma ? ", " : "") << invocation.passed() << " passed";
+                comma = true;
+            }
+
+            if (invocation.total()) {
+                *_stream << ")";
+            }
+
+            *_stream << std::endl;
+
         }
 
         void before(ScenarioInvocation const &invocation) override {
