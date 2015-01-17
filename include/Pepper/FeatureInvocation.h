@@ -10,11 +10,11 @@
 #define Pepper_FeatureInvocation_h
 
 #include "ScenarioInvocation.h"
-#include "StepCounters.h"
+#include "Counters.h"
 
 namespace Pepper {
 
-    class FeatureInvocation : public AbstractInvocation, public StepCounters {
+    class FeatureInvocation : public AbstractInvocation {
 
     public:
 
@@ -35,24 +35,56 @@ namespace Pepper {
 
             befores().accept(node.name(), *feature);
 
+            _scenarioCounters.pending() = node.children().size();
+
             for (auto &child : node.children()) {
 
                 ScenarioInvocation invocation(befores(), steps(), formatter(), feature);
 
                 child->accept(invocation);
 
-                passed() += invocation.passed();
-                pending() += invocation.pending();
-                undefined() += invocation.undefined();
-                skipped() += invocation.skipped();
-                failures() += invocation.failures();
+                _scenarioCounters.pending()--;
+
+                if (invocation.pending()
+                    || invocation.undefined()
+                    || invocation.skipped()) {
+
+                    _scenarioCounters.pending()++;
+
+                } else if (invocation.failures()) {
+
+                    _scenarioCounters.failures()++;
+
+                } else {
+
+                    _scenarioCounters.passed()++;
+
+                }
+
+                _stepCounters.passed() += invocation.passed();
+                _stepCounters.pending() += invocation.pending();
+                _stepCounters.undefined() += invocation.undefined();
+                _stepCounters.skipped() += invocation.skipped();
+                _stepCounters.failures() += invocation.failures();
 
             }
             
             formatter()->after(*this);
+
+        }
+
+        Counters const &scenarioCounters() const {
+            return _scenarioCounters;
+        }
+
+        Counters const &stepCounters() const {
+            return _stepCounters;
         }
 
     private:
+
+        Counters        _scenarioCounters;
+        Counters        _stepCounters;
 
     };
 

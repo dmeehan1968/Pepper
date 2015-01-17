@@ -10,11 +10,11 @@
 #define Pepper_ScenarioInvocation_h
 
 #include "StepInvocation.h"
-#include "StepCounters.h"
+#include "Counters.h"
 
 namespace Pepper {
 
-    class ScenarioInvocation : public AbstractInvocation, public StepCounters {
+    class ScenarioInvocation : public AbstractInvocation, public Counters {
 
     public:
 

@@ -1,5 +1,5 @@
 //
-//  StepCounters.h
+//  Counters.h
 //  Pepper
 //
 //  Created by Dave Meehan on 17/01/2015.
@@ -11,11 +11,11 @@
 
 namespace Pepper {
 
-    class StepCounters {
+    class Counters {
 
     public:
 
-        StepCounters()
+        Counters()
         :
         _passed(0),
         _pending(0),

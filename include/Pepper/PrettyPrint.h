@@ -44,45 +44,10 @@ namespace Pepper {
         void after(FeatureInvocation const &invocation) override {
             --_indent;
 
-            *_stream    << indent() << std::endl
-                        << invocation.total() << " steps";
-
-            if (invocation.total()) {
-                *_stream << " (";
-            }
-
-            bool comma = false;
-
-            if (invocation.failures()) {
-                *_stream << (comma ? ", " : "") << invocation.failures() << " failed";
-                comma = true;
-            }
-
-            if (invocation.pending()) {
-                *_stream << (comma ? ", " : "") << invocation.pending() << " pending";
-                comma = true;
-            }
-
-            if (invocation.undefined()) {
-                *_stream << (comma ? ", " : "") << invocation.undefined() << " undefined";
-                comma = true;
-            }
-
-            if (invocation.skipped()) {
-                *_stream << (comma ? ", " : "") << invocation.skipped() << " skipped";
-                comma = true;
-            }
-
-            if (invocation.passed()) {
-                *_stream << (comma ? ", " : "") << invocation.passed() << " passed";
-                comma = true;
-            }
-
-            if (invocation.total()) {
-                *_stream << ")";
-            }
-
             *_stream << std::endl;
+            
+            *_stream << format("scenarios", invocation.scenarioCounters()) << std::endl;
+            *_stream << format("steps", invocation.stepCounters()) << std::endl;
 
         }
 
@@ -128,6 +93,52 @@ namespace Pepper {
             os << keyword << (colon == Colon::With ? ": " : " ") << node.name();
             return os.str();
             
+        }
+
+        std::string format(std::string const &what, Counters const &counters) {
+
+            std::ostringstream os;
+
+            os  << indent()
+                << counters.total() << " " << what;
+
+            if (counters.total()) {
+                os << " (";
+            }
+
+            bool comma = false;
+
+            if (counters.failures()) {
+                os << (comma ? ", " : "") << counters.failures() << " failed";
+                comma = true;
+            }
+
+            if (counters.pending()) {
+                os << (comma ? ", " : "") << counters.pending() << " pending";
+                comma = true;
+            }
+
+            if (counters.undefined()) {
+                os << (comma ? ", " : "") << counters.undefined() << " undefined";
+                comma = true;
+            }
+
+            if (counters.skipped()) {
+                os << (comma ? ", " : "") << counters.skipped() << " skipped";
+                comma = true;
+            }
+
+            if (counters.passed()) {
+                os << (comma ? ", " : "") << counters.passed() << " passed";
+                comma = true;
+            }
+
+            if (counters.total()) {
+                os << ")";
+            }
+            
+            return os.str();
+
         }
 
     private:
